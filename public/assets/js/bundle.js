@@ -108,6 +108,8 @@ var Action = /*#__PURE__*/function () {
   return Action;
 }();
 
+;
+
 var Pessoa = function Pessoa(nome, sobrenome, email) {
   _classCallCheck(this, Pessoa);
 
@@ -116,6 +118,7 @@ var Pessoa = function Pessoa(nome, sobrenome, email) {
   this.email = email;
 };
 
+;
 document.addEventListener('click', function (e) {
   if (e.target.value === 'Continuar') {
     var actContinuar = new Action(e.target);

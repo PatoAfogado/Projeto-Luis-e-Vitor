@@ -63,7 +63,7 @@ class Action {
 
     enviaFormulario(e) {
         this.handleSubmit(e);
-        
+
         try {
             const assunto = this.form.querySelector('#assunto').value;
             const mensagem = this.form.querySelector('#mensagem').value;
@@ -77,7 +77,7 @@ class Action {
         };
     };
 
-}
+};
 
 
 class Pessoa {
@@ -87,7 +87,7 @@ class Pessoa {
         this.email = email;
     };
 
-}
+};
 
 document.addEventListener('click', e => {
     
