@@ -49,19 +49,19 @@ var Action = /*#__PURE__*/function () {
 
     this.button = button;
     this.form = document.querySelector('.form');
-    this.holdEvent();
+    this.execute();
   }
 
   _createClass(Action, [{
-    key: "holdEvent",
-    value: function holdEvent() {
+    key: "execute",
+    value: function execute() {
       var _this2 = this;
 
       if (this.button.value === 'Continuar') {
         this.form.addEventListener('submit', function (e) {
           console.log('algumacoisa');
 
-          _this2.handleSubmit(e);
+          _this2.loadNewContatos(e);
         });
         return;
       }
@@ -75,6 +75,11 @@ var Action = /*#__PURE__*/function () {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
+    }
+  }, {
+    key: "loadNewContatos",
+    value: function loadNewContatos(e) {
+      this.handleSubmit(e);
       var _ref = [this.form.querySelector('#nome').value, this.form.querySelector('#sobrenome').value, this.form.querySelector('#email').value],
           nome = _ref[0],
           sobrenome = _ref[1],
@@ -85,7 +90,7 @@ var Action = /*#__PURE__*/function () {
   }, {
     key: "enviaFormulario",
     value: function enviaFormulario(e) {
-      e.preventDefault();
+      this.handleSubmit(e);
 
       try {
         var assunto = this.form.querySelector('#assunto').value;

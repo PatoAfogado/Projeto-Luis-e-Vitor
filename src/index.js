@@ -27,14 +27,14 @@ class Action {
     constructor (button) {
         this.button = button;
         this.form = document.querySelector('.form');
-        this.holdEvent();
+        this.execute();
     };
 
-    holdEvent () {
+    execute () {
         if (this.button.value === 'Continuar') {
             this.form.addEventListener('submit', e => {
                 console.log('algumacoisa')
-                this.handleSubmit(e);
+                this.loadNewContatos(e);
             });
             return;
         };
@@ -47,6 +47,11 @@ class Action {
 
     handleSubmit (e) {
         e.preventDefault();
+    };
+
+    loadNewContatos (e) {
+        this.handleSubmit(e);
+
         const [nome, sobrenome, email] = [
             this.form.querySelector('#nome').value,
             this.form.querySelector('#sobrenome').value,
@@ -57,7 +62,8 @@ class Action {
     };
 
     enviaFormulario(e) {
-        e.preventDefault();
+        this.handleSubmit(e);
+        
         try {
             const assunto = this.form.querySelector('#assunto').value;
             const mensagem = this.form.querySelector('#mensagem').value;
