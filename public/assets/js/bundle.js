@@ -59,8 +59,6 @@ var Action = /*#__PURE__*/function () {
 
       if (this.button.value === 'Continuar') {
         this.form.addEventListener('submit', function (e) {
-          console.log('algumacoisa');
-
           _this2.loadNewContatos(e);
         });
         return;

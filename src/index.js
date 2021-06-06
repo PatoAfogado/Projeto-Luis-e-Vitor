@@ -33,7 +33,6 @@ class Action {
     execute () {
         if (this.button.value === 'Continuar') {
             this.form.addEventListener('submit', e => {
-                console.log('algumacoisa')
                 this.loadNewContatos(e);
             });
             return;
