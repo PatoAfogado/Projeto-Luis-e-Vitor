@@ -1,6 +1,3 @@
-const fs = require('fs');
-import { runit } from './runningPython'
-
 class Loader {
     constructor(url, form, dadosPessoa) {
         this.form = form;
@@ -64,10 +61,10 @@ class Action {
         try {
             const assunto = this.form.querySelector('#assunto').value;
             const mensagem = this.form.querySelector('#mensagem').value;
-            //runit();
-            /*alert(`Formulario enviado: \nAssunto: ${assunto}` +
-                  `\nMensagem: ${mensagem}`)
-            this.form.submit();*/
+
+            alert(`Formulario enviado: \nAssunto: ${assunto}` +
+                  `\nMensagem: ${mensagem}`);
+            this.form.submit();
         
         } catch (error) {
             console.error(error)
@@ -98,4 +95,3 @@ document.addEventListener('click', e => {
     };
 });
 
-console.log(fs.readFileSync('./pythonFile.txt', 'utf-8'))
