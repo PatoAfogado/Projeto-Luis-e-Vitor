@@ -19,5 +19,6 @@ module.exports = {
             }
         }]
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    target: 'node'
 };
